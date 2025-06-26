@@ -1,0 +1,128 @@
+[
+    {
+        "website": "https://www.wikiwand.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://www.ted.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://nature.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://libretexts.org",
+        "expected": [
+            "Creative Commons (CC)", "GNU GPL"
+        ]
+    },
+    {
+        "website": "https://commonsensemedia.org",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://si.edu",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://justia.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://okdiario.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://github.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://definitions.net",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://lyrics.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://thenounproject.com/",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://www.britannica.com/",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://wondershare.com",
+        "expected": [
+            "GNU GPL", "MIT License", "Apache License" 
+        ]
+    },
+    {
+        "website": "https://biomedcentral.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://vocal.media",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://news-medical.net",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://fortune.com",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://huggingface.co/",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://creativecommons.org",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    },
+    {
+        "website": "https://aclanthology.org",
+        "expected": [
+            "Creative Commons (CC)"
+        ]
+    }
+]

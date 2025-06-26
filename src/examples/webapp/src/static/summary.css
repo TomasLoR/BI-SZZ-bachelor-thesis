@@ -1,0 +1,14 @@
+
+.summary, .answer {
+    padding: var(--spacing-large);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow);
+}
+
+.summary p, .answer p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+

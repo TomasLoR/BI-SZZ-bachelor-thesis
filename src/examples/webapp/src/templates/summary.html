@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='summary.css') }}">
+{% endblock %}
+
+{% block headerTitle %}{{ super() }}{% endblock %}
+
+{% block content %}
+    <section class="summary">
+        <h2>Summary - {{ api }}</h2>
+        <p>{{ summary }}</p>
+    </section>
+
+    <form method="POST" action="{{ url_for('create_answer', scan_id=scan_id, summary_id=summary_id) }}">
+        <label for="question">Here you can ask a question about the summary</label>
+        <input type="text" id="question" name="question" required>
+        
+        <label for="huggingface">
+            <input type="radio" id="huggingface" name="api" value="huggingface" checked>
+            Hugging Face
+        </label>
+    
+        <label for="googleai">
+            <input type="radio" id="googleai" name="api" value="googleai">
+            Google AI Studio
+        </label>
+    
+        <button type="submit">Submit question</button>
+    </form>
+    
+
+    {% if answer %}
+    <section class="answer">
+        <h2>Answer - {{ api }}</h2>
+        <p>{{ answer }}</p>
+    </section>
+    {% endif %}
+{% endblock %}

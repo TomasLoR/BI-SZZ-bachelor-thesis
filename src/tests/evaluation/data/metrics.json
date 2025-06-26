@@ -1,0 +1,28 @@
+{
+    "average_scores": {
+        "mistral": {
+            "bert_score": {
+                "avg_precision": 0.8584964275360107,
+                "avg_recall": 0.8980752825737,
+                "avg_f1": 0.8777346611022949
+            },
+            "rouge_score": {
+                "avg_rouge1": 0.4897572845662362,
+                "avg_rougeL": 0.3323781242927718
+            },
+            "hallucination_score": 0.75
+        },
+        "llama2": {
+            "bert_score": {
+                "avg_precision": 0.8403589725494385,
+                "avg_recall": 0.8860383629798889,
+                "avg_f1": 0.8625149726867676
+            },
+            "rouge_score": {
+                "avg_rouge1": 0.3997247403687801,
+                "avg_rougeL": 0.26615643189364435
+            },
+            "hallucination_score": 0.5
+        }
+    }
+}

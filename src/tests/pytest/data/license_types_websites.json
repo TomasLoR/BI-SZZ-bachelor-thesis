@@ -1,0 +1,122 @@
+[
+    {
+        "website": "https://www.wikiwand.com",
+        "expected": [
+            "CC-BY-SA-4.0"
+        ]
+    },
+    {
+        "website": "https://www.ted.com",
+        "expected": [
+            "CC-BY-NC-ND-4.0"
+        ]
+    },
+    {
+        "website": "https://nature.com",
+        "expected": [
+            "CC-BY-NC-ND"
+        ]
+    },
+    {
+        "website": "https://libretexts.org",
+        "expected": [
+            "Unknown"
+        ]
+    },
+    {
+        "website": "https://commonsensemedia.org",
+        "expected": [
+            "CC-BY-NC-SA"
+        ]
+    },
+    {
+        "website": "https://si.edu",
+        "expected": [
+            "CC0"
+        ]
+    },
+    {
+        "website": "https://justia.com",
+        "expected": [
+            "CC-BY-NC-3.0"
+        ]
+    },
+    {
+        "website": "https://okdiario.com",
+        "expected": [
+            "CC-BY-NC-3.0"
+        ]
+    },
+    {
+        "website": "https://github.com",
+        "expected": [
+            "CC0"
+        ]
+    },
+    {
+        "website": "https://definitions.net",
+        "expected": [
+            "CC-BY"
+        ]
+    },
+    {
+        "website": "https://lyrics.com",
+        "expected": [
+            "CC-BY"
+        ]
+    },
+    {
+        "website": "https://thenounproject.com/",
+        "expected": [
+            "CC-BY", "CC0"
+        ]
+    },
+    {
+        "website": "https://www.britannica.com/",
+        "expected": [
+            "Unknown"
+        ]
+    },
+    {
+        "website": "https://biomedcentral.com",
+        "expected": [
+            "Unknown"
+        ]
+    },
+    {
+        "website": "https://vocal.media",
+        "expected": [
+            "Unknown"
+        ]
+    },
+    {
+        "website": "https://news-medical.net",
+        "expected": [
+            "Unknown"
+        ]
+    },
+    {
+        "website": "https://fortune.com",
+        "expected": [
+            "CC-BY-SA-3.0"
+        ]
+    },
+    {
+        "website": "https://huggingface.co/",
+        "expected": [
+            "Unknown"
+        ]
+    },
+    {
+        "website": "https://creativecommons.org",
+        "expected": [
+            "CC-BY-4.0"
+        ]
+    },
+    {
+        "website": "https://aclanthology.org",
+        "expected": [
+            "CC-BY-NC-SA-3.0", "CC-BY-4.0"
+        ]
+    }
+]

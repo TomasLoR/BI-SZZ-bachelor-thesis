@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='scans.css') }}">
+{% endblock %}
+
+{% block content %}
+    {% for result in results %}
+    <div class="result-card {{ 'blocked' if result.blockedByRobotsTxt else '' }}">
+        <h3>
+            <a href="{{ result.website }}" target="_blank">{{ result.website }}</a>
+        </h3>
+        
+        <div class="status">
+
+            {% if result.error %}
+            <p>Unexpected error: {{result.error}}</p>
+            {% endif %}
+            
+            {% if result.blockedByRobotsTxt %}
+                <p>Blocked by robots.txt</p>
+            {% endif %}
+            
+            {% if result.invalidUrl %}
+                <p>Given URL is invalid</p>
+            {% endif %}
+            
+            {% if result.licenseLink %}
+                <p>License link found: <a href="{{ result.licenseLink }}" target="_blank">Visit link</a></p>
+            {% endif %}
+
+            {% if result.licenseType %}
+                <p>License type: {{ result.licenseType }}</p>
+            {% endif %}
+
+            {% if result.relevantLinks %}
+                <p>Links to ToS information:</p>
+                <ul>
+                    {% for link in result.relevantLinks %}
+                        <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        
+
+        {% if result.content %}
+        <div class="license-mentions">
+            Licenses mentioned in ToS:
+            {% if result.licenseMentions %}
+                {{ result.licenseMentions | join(', ') }}
+            {% else %}
+                None
+            {% endif %}
+        </div>
+        <details>
+            <summary>Extracted ToS text</summary>
+            <div class="content">{{ result.content }}</div>
+        </details>
+
+        <form action="{{ url_for('create_summary', scan_id=scan_id) }}" method="POST">
+            <input type="hidden" name="result" value="{{ result }}">
+            
+            <label for="huggingface">
+                <input type="radio" id="huggingface" name="api" value="huggingface" checked>
+                Hugging Face
+            </label>
+            
+            <label for="googleai">
+                <input type="radio" id="googleai" name="api" value="googleai">
+                Google AI Studio
+            </label>
+            
+            <button type="submit">Generate Summary</button>
+        </form>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endblock %}

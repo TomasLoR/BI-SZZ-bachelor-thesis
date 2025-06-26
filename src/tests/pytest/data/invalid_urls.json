@@ -1,0 +1,13 @@
+[
+    { "website": "https://invalid-url" },
+    { "website": "htp://misspelled-url.com" },
+    { "website": "://missing-protocol.com" },
+    { "website": "http//missing-colon.com" },
+    { "website": "https://.com" },
+    { "website": "http://..com" },
+    { "website": "https:// example.com" },
+    { "website": "ftp://example" },
+    { "website": "http://!invalid-url.com" },
+    { "website": "https://path//to//nowhere.com" },
+    { "website": "https://example..com" }
+]

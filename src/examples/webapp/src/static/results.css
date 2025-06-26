@@ -1,0 +1,41 @@
+.result-card {
+    min-width: 20%;
+    max-width: 70%;
+    margin: var(--spacing-medium) auto;
+    background: var(--secondary-color);
+    padding: var(--spacing-medium);
+    border: 0.0625rem solid var(--primary-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.result-card a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.result-card.blocked {
+    border: 0.125rem solid #ff6b6b;
+}
+
+.status {
+    margin-bottom: var(--spacing-small);
+}
+
+.content {
+    padding: var(--spacing-medium);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow);
+    margin-top: var(--spacing-small);
+}
+
+li {
+    padding: 0.25rem;
+}

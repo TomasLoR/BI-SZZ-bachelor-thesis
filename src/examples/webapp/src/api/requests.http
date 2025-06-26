@@ -1,0 +1,44 @@
+### Test POST /api/scans - Scan URLs for licenses
+POST http://localhost:5000/api/scans
+Content-Type: application/json
+
+{
+  "urls": [
+    "https://cs.wikipedia.org",
+    "https://developer.mozilla.org"
+  ]
+}
+
+### Test GET /api/scans/<scan_id> - Get specific scan result  
+GET http://localhost:5000/api/scans/e8d82bef-78a6-4d69-b99e-f9a28ed7441f
+Content-Type: application/json
+
+### Test POST /api/summaries - Summarize website content using LLM model
+POST http://localhost:5000/api/summaries
+Content-Type: application/json
+
+{
+  "website": "https://www.wikiwand.com",
+  "content": "Written content available on the Site has generally been made available by Wikipedia or its licensors under the the Creative Commons Attribution-ShareAlike 4 0 International License (CC BY-SA) and/or theGNU Free Documentation License(GFDL) The Site uses all such text pursuant to the terms of the CC BY-SA and you are free to use such content in compliance with such license Certain specific text may be made available by Wikipedia under other free licenses, and the Site makes such text available under the applicable license Images and video available on the Site are generally in the public domain or have been made available on Wikipedia under free licenses or using a fair use exception Wikiwand makes best efforts to comply with the applicable licenses, and appreciate any questions or comments you have regarding our compliance policies The policy of Wikiwand is not to infringe or violate the intellectual property rights or other rights of any third party and, if properly informed, Wikiwand will remove material appearing on the Site that infringes the rights of any third party Under the Digital Millennium Copyright Act of 1998 (the DMCA), Wikiwand will remove any content if properly notified of that such material infringes third party rights, and may do so at its sole discretion, without prior notice to users at any time If you believe that something appearing on the Site infringes your copyright, you may send us a notice requesting that it be removed, or access to it blocked In addition, Wikiwand Map uses OpenStreetMap data, which is available under the Open Database License Apple has no responsibility for the Site or the content of the Site, including in respect of claims of intellectual property infringement, product liability or that the Site does not conform with applicable law",
+  "api": "googleai",
+  "api_key": "..."
+}
+
+### Test GET /api/summaries/<task_id> - Check summary status
+GET http://localhost:5000/api/summaries/52c874b8-d226-43ab-a8c9-8b48ee2344f6
+Content-Type: application/json
+
+### Test POST /api/answers - Submit question task
+POST http://localhost:5000/api/answers
+Content-Type: application/json
+
+{
+  "summary": "The Terms of Service for Wikiwand state that the majority of the written content on their site is available under two licenses: Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) and GNU Free Documentation License (GFDL). Images and videos are either in the public domain, have been made available with free licenses, or use a \"fair use\" exception.\n\nWikiwand aims to comply with all applicable licenses and appreciates any questions or comments regarding their compliance policies. They do not intend to infringe or violate any third party's intellectual property rights. If properly informed, they will remove any content that infringes on a third party's rights.\n\nUnder the Digital Millennium Copyright Act of 1998 (DMCA), Wikiwand will remove any content if properly notified of an infringement. They may do so at their discretion without prior notice to users. If you believe that something on the site infringes your copyright, you can send a notice requesting its removal or access block.\n\nWikiwand Map uses OpenStreetMap data, which is available under the Open Database License. Apple has no responsibility for the site or its content, including claims of intellectual property infringement, product liability, or non-conformity with applicable law.",
+  "question": "What kind of content is under the Creative Commons license?",
+  "api": "huggingface",
+  "api_key": "..."
+}
+
+### Test GET /api/answers/<task_id> - Check question status
+GET http://localhost:5000/api/answers/afc1854e-eed2-4714-9344-187bff8b3ca3
+Content-Type: application/json

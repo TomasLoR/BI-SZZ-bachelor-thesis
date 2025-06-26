@@ -1,0 +1,37 @@
+CC in footer:
+https://en.wikipedia.org
+https://developer.mozilla.org
+https://stackexchange.com  
+https://stackoverflow.com  
+https://superuser.com  
+https://wiktionary.org  
+https://wikidata.org  
+https://lumenlearning.com  
+https://wikivoyage.org  
+https://www.gov.br  
+https://www.openbookpublishers.com
+https://llm-as-a-judge.github.io/
+
+
+Licenses mentioned in Tos:
+https://www.wikiwand.com
+https://www.ted.com
+https://nature.com
+https://libretexts.org
+https://commonsensemedia.org
+https://si.edu
+https://justia.com
+https://okdiario.com
+https://github.com
+https://definitions.net
+https://lyrics.com
+https://thenounproject.com/
+https://www.britannica.com/
+https://wondershare.com
+https://biomedcentral.com
+https://vocal.media
+https://news-medical.net
+https://fortune.com
+https://huggingface.co/
+https://creativecommons.org
+https://aclanthology.org

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block navigation %}{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('create_scan') }}">
+        <h2>Enter websites to scan and API keys for ToS proccessing</h2>
+        <textarea name="urls" rows="10" 
+                  placeholder="https://example.com"></textarea>
+        
+        <div class="api-field">
+            <label for="huggingface_api_key">Hugging Face API Key:</label>
+            <input type="password" id="huggingface_api_key" name="huggingface_api_key" value="{{ huggingface_key }}">
+
+            <label for="googleai_api_key">Google AI Studio API Key:</label>
+            <input type="password" id="googleai_api_key" name="googleai_api_key" value="{{ googleai_key }}">
+        </div>  
+        <button class="button" type="submit">Scan Websites</button>
+    </form>
+{% endblock %}

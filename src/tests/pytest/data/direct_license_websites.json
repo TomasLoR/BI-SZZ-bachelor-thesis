@@ -1,0 +1,14 @@
+[
+    {"website": "https://en.wikipedia.org", "expected": ["https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License", "CC-BY-SA-4.0"]},
+    {"website": "https://developer.mozilla.org", "expected": ["https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Attrib_copyright_license", "Unknown"]},
+    {"website": "https://stackexchange.com", "expected": ["https://stackoverflow.com/help/licensing", "CC-BY-SA"]},
+    {"website": "https://stackoverflow.com", "expected": ["https://stackoverflow.com/help/licensing", "CC-BY-SA"]},
+    {"website": "https://superuser.com", "expected": ["https://stackoverflow.com/help/licensing", "CC-BY-SA"]},
+    {"website": "https://wiktionary.org", "expected": ["https://creativecommons.org/licenses/by-sa/4.0/", "CC-BY-SA-4.0"]},
+    {"website": "https://lumenlearning.com", "expected": ["https://creativecommons.org/licenses/by/4.0/", "CC-BY-4.0"]},
+    {"website": "https://wikivoyage.org", "expected": ["https://creativecommons.org/licenses/by-sa/4.0/", "CC-BY-SA-4.0"]},
+    {"website": "https://www.gov.br", "expected": ["https://creativecommons.org/licenses/by-nd/3.0/deed.pt_BR", "CC-BY-ND-3.0"]},
+    {"website": "https://llm-as-a-judge.github.io/", "expected": ["http://creativecommons.org/licenses/by-sa/4.0/", "CC-BY-SA-4.0"]},
+    {"website": "https://www.openbookpublishers.com/", "expected": ["http://creativecommons.org/licenses/by/4.0/", "CC-BY-4.0"]},
+    {"website": "https://www.wikidata.org", "expected": ["https://creativecommons.org/licenses/by-sa/4.0/", "https://creativecommons.org/publicdomain/zero/1.0/", "CC-BY-4.0, CC0"]}
+]

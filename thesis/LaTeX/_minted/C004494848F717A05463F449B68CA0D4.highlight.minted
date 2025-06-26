@@ -1,0 +1,73 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{re}
+
+\PYG{c+c1}{\PYGZsh{} Konstanta pro user agenta}
+\PYG{n}{USER\PYGZus{}AGENT} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{MyCrawler/1.0}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} Regex pro detekci licencí}
+\PYG{n}{LICENSE\PYGZus{}PATTERNS} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{MIT License}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{re}\PYG{o}{.}\PYG{n}{compile}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{bMIT}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s+(?:License}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s+)?(?:v?}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{d+}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{.}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{d+)?}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{re}\PYG{o}{.}\PYG{n}{IGNORECASE}\PYG{p}{)}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Apache License 2.0}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{re}\PYG{o}{.}\PYG{n}{compile}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{bApache}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s+(?:License}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s+)?2}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{.0}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{re}\PYG{o}{.}\PYG{n}{IGNORECASE}\PYG{p}{)}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Creative Commons (CC)}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{re}\PYG{o}{.}\PYG{n}{compile}\PYG{p}{(}
+        \PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{b(?:Creative[}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s\PYGZhy{}]+Commons|CC)}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{b}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{(?:[}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s\PYGZhy{}]*}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{(?:BY|SA|NC|ND|0|CC0|Attribution|ShareAlike|NonCommercial|NoDerivatives|[}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{d.]+)}\PYG{l+s+s1}{\PYGZsq{}}
+        \PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{)*}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{re}\PYG{o}{.}\PYG{n}{IGNORECASE}
+    \PYG{p}{)}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{GNU GPL}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{re}\PYG{o}{.}\PYG{n}{compile}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{bGPL}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{b[}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s\PYGZhy{}]*(?:v?(?:3|2))?}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{re}\PYG{o}{.}\PYG{n}{IGNORECASE}\PYG{p}{)}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{BSD License}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{:} \PYG{n}{re}\PYG{o}{.}\PYG{n}{compile}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{bBSD}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s+(?:License}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{s+)?(?:[}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{d.]+)?}\PYG{l+s+s1}{\PYGZbs{}}\PYG{l+s+s1}{b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{re}\PYG{o}{.}\PYG{n}{IGNORECASE}\PYG{p}{)}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} Verze CC licencí}
+\PYG{n}{CC\PYGZus{}VERSIONS} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{1.0}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{2.0}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{2.5}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{3.0}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{4.0}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Typy CC licencí}
+\PYG{n}{CC\PYGZus{}TYPES} \PYG{o}{=} \PYG{p}{[}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY\PYGZhy{}SA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY\PYGZhy{}ND}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY\PYGZhy{}NC}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY\PYGZhy{}NC\PYGZhy{}SA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY\PYGZhy{}NC\PYGZhy{}ND}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Mapování typů CC licencí}
+\PYG{n}{CC\PYGZus{}TYPE\PYGZus{}MAP} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{attribution}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{by}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{BY}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sharealike}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{share\PYGZhy{}alike}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sa}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SA}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{noncommercial}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NC}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{non\PYGZhy{}commercial}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NC}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nc}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{NC}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{noderivatives}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ND}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{no\PYGZhy{}derivatives}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ND}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{nd}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ND}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{\PYGZsh{} Relevantní odkazy podle klíčových frází}
+\PYG{n}{RELEVANT\PYGZus{}LINKS\PYGZus{}KEYWORDS} \PYG{o}{=} \PYG{p}{[}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{terms}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{legal}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{license}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{use}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Klíčová slova pro analýzu obsahu}
+\PYG{n}{RELEVANT\PYGZus{}TEXT\PYGZus{}KEYWORDS} \PYG{o}{=} \PYG{p}{[}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{intellectual property}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{usage rights}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{authorised}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{distribution rights}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{commercial use}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{non\PYGZhy{}commercial use}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{modification rights}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{fair use}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{license}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{copyright}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{creative commons}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{cc by}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}
+\PYG{p}{]}
+\end{MintedVerbatim}

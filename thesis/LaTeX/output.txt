@@ -1,0 +1,64 @@
+Úvod
+
+V dnešním digitální světě je dostupnost webového obsahu obrovská a neustále
+roste. S tím však přibývá i množství právních dokumentů, jako jsou licence
+a podmínky použití, které uživatelé často přehlížejí. Přesto jsou tyto dokumenty klíčové, protože vymezují, jak mohou uživatelé obsah sdílet, upravovat
+a dále využívat. Neznalost těchto podmínek může vést k neúmyslnému porušení autorských práv, což v některých případech může mít i právní důsledky.
+Hlavním problémem je, že právní dokumenty jsou často dlouhé, složitě
+formulované a pro běžné uživatele obtížně srozumitelné. To vede k tomu, že
+je uživatelé často nečtou nebo jim nerozumí, čímž se nevědomky vystavují
+právním rizikům. [1]
+Cílem této práce je analyzovat metody extrakce informací z webových
+zdrojů a navrhnout a implementovat nástroj, který pomocí těchto metod dokáže detekovat licence a zpracovat podmínky použití na webových stránkách.
+Tento nástroj uživatelům poskytne stručné a relevantní informace o licenčních
+omezeních, čímž usnadní orientaci v textech o podmínkách použití obsahu
+a pomůže předcházet neúmyslnému porušování autorských práv.
+Práce bude rozdělena do několika kapitol. Nejprve se zaměřím na analýzu problematiky extrakce informací z webových zdrojů, analýzu jazykových
+modelů a průzkum existujících řešení. Následně se budu věnovat výběru použitých technologií a návrhu architektury. Ve třetí části se zaměřím na samotnou
+implementaci nástroje a vývoj prototypu webové aplikace, na kterém nástroj
+bude demonstrován. Nakonec se budu věnovat testování nástroje a hodnocení
+přesnosti jazykových modelů.
+Téma této práce jsem si zvolil, protože problematika licenčních podmínek a jejich srozumitelnosti je velmi aktuální. Navíc principy zpracování přirozeného jazyka a stále populárnější jazykové modely mají široké uplatnění
+i v mnoha dalších oblastech.
+
+1
+
+Kapitola 1
+
+Analýza
+
+Předtím, něž je možné začít s návrhem a implementací nástroje, je nutné
+provést analýzu dílčích částí problému. V této kapitole se tak zaměřuji na
+analýzu licencí a podmínek použití na webových stránkách, extrakci informací z webových zdrojů, jazykové modely a existující nástroje a řešení.
+
+1.1
+
+Licence na webu
+
+Licence na webových stránkách představují právní nástroje, které definují, jak
+mohou uživatelé nakládat s obsahem dostupným na internetu. Tyto licence
+jsou klíčovým prvkem pro ochranu duševního vlastnictví a zároveň umožňují
+stanovit jasná pravidla pro další využití obsahu. Existuje více než 400 různých
+licencí, které se liší podle toho, jaké podmínky stanovují. Každá taková licence
+může být využívána pro různé druhy obsahu, jako jsou texty, obrázky, videa
+nebo software. Každá licence má navíc své vlastní zkratky a symboly, které ji
+identifikují. [2]
+Na webu se setkáváme s několika typy licencí [3]:
+Proprietární licence: Omezují uživatele v možnostech kopírování, modifikace nebo distribuce obsahu. Tyto licence jsou nejrestriktivnější a typicky
+neumožňují přístup ke zdrojovému kódu nebo modifikaci díla
+Public domain: Obsah, který není chráněn autorským právem a je volně
+dostupný k jakémukoli použití.
+Unlicensed: Soukromý nelicencovaný obsah, který stále podléhá autorskému
+právu, i když nemá explicitně uvedenou licenci.
+Open source licence: Poskytují uživatelům práva k používání, úpravě a sdílení obsahu za určitých podmínek. Tyto licence se dále dělí na:
+Permisivní licence: jako Apache, MIT nebo BSD, které kladou minimální omezení na další využití a umožňují začlenění do proprietárních
+
+2
+
+Licence na webu
+
+3
+
+projektů.
+Copyleft licence: jako GPL, AGPL nebo LGPL, které vyžadují, aby odvozená díla byla distribuována pod stejnou licencí.
+Podobně jako u open source licencí, které 

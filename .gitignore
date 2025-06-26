@@ -1,0 +1,19 @@
+# Node.js dependencies
+node_modules/
+
+# PlaywrightCrawler storage directory
+storage/
+
+# VSCode directory
+.vscode/
+
+# Python cache
+__pycache__/
+
+# Output directory
+data/output.json
+
+# Build artifacts
+src/build/
+src/*.egg-info/
+src/dist/

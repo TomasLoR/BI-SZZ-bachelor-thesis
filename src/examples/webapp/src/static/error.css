@@ -1,0 +1,10 @@
+main {
+    text-align: center;
+    margin: var(--spacing-large) auto;
+    padding: var(--spacing-large);
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 0.0625rem solid #f5c6cb;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+}

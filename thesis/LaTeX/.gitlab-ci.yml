@@ -1,0 +1,27 @@
+image: texlive/texlive:latest
+
+LuaLaTeX:
+    script: 
+        - sed 's/\[czech/\[slovak/' ctufit-thesis.tex > ctufit-thesis-sk.tex
+        - sed 's/\[czech/\[english/' ctufit-thesis.tex > ctufit-thesis-en.tex
+        - latexmk -pdflua ctufit-thesis.tex
+        - latexmk -pdflua ctufit-thesis-en.tex
+        - latexmk -pdflua ctufit-thesis-sk.tex
+    artifacts:
+        paths:
+            - ctufit-thesis.pdf
+            - ctufit-thesis-en.pdf
+            - ctufit-thesis-sk.pdf
+
+XeLaTeX:
+    script: 
+        - sed 's/\[czech/\[slovak/' ctufit-thesis.tex > ctufit-thesis-sk.tex
+        - sed 's/\[czech/\[english/' ctufit-thesis.tex > ctufit-thesis-en.tex
+        - latexmk -pdfxe ctufit-thesis.tex
+        - latexmk -pdfxe ctufit-thesis-en.tex
+        - latexmk -pdfxe ctufit-thesis-sk.tex
+    artifacts:
+        paths:
+            - ctufit-thesis.pdf
+            - ctufit-thesis-en.pdf
+            - ctufit-thesis-sk.pdf
